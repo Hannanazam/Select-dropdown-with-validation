@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Select Dropdown Validate</title>
+</head>
+<style>
+  body
+{
+  font-family: Arial, Sans-serif;
+}
+form{
+  width: 25%;
+    margin: auto;
+    margin-top: 15%;
+}
+select{
+    width: 150px;
+    height: 40px;
+    padding: 5px;
+    outline: none;
+}
+label.error
+{
+color:red;
+font-family:verdana, Helvetica;    
+font-size: 12px;
+margin: 10px;
+}
+.btn{
+  background-color: #f04c4c;
+  color: #fff;
+  padding: 10px 20px;
+  border: 1px solid #f04c4c;
+  transition: .5s;
+  cursor: pointer;
+}
+.btn:hover{
+  background-color: #fff;
+  color: #f04c4c;
+  padding: 10px 20px;
+  border: 1px solid #f04c4c;
+  transition: .5s;
+}
+</style>
+<body>
+<!-- partial:index.partial.html -->
+<form method="post" name="myform" id="myform">
+	<p>
+		<select name='item'  size='1'>
+     <option value=''>Select ...</option>
+      <option value='Avocado'>Avocado</option>
+      <option value='Bell Pepper'>Bell Pepper</option> 
+      <option value='Bitter Melon'>Bitter Melon</option> 
+      <option value='Chayote'>Chayote</option>
+      <option value='Cucumber'>Cucumber</option>
+      <option value='Ivy'>Ivy</option> Gourd
+      <option value='Aubergine'>Aubergine</option>
+      <option value='Olive'>Olive</option> fruit
+      <option value='Luffa'>Luffa</option>
+      </select>
+	</p>
+	   
+	<input type="submit" class="btn" name='submit' value="Submit">
+</form>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js'></script>
+<script>
+  $(function()
+{
+    $("#myform").validate(
+      {
+        rules: 
+        {
+          item: 
+          {
+            required: true
+          }
+        }
+      });	
+});
+</script>
+</body>
+</html>
